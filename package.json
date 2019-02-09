@@ -1,15 +1,14 @@
 {
-  "name": "lesson3-part3",
+  "name": "lesson4b",
   "version": "0.0.1",
   "private": true,
   "scripts": {
     "start": "node server.js"
   },
-   "engines" :
-     { 
-       "node" : "^10.15.0",
-       "npm" : "^6.0.0" 
-      },
+  "engines": {
+    "node": "^10.15.0",
+    "npm": "^6.0.0"
+  },
   "dependencies": {
     "bootstrap": "^4.2.1",
     "cookie-parser": "~1.4.3",
@@ -19,11 +18,23 @@
     "font-awesome": "^4.7.0",
     "http-errors": "~1.6.2",
     "jquery": "^3.3.1",
+    "mongoose": "^5.4.10",
     "morgan": "~1.9.0",
     "popper.js": "^1.14.7"
   },
-  "description": "express gernerator demo",
+  "description": "Mongo and Mongoose demo",
   "main": "server.js",
   "author": "",
-  "license": "ISC"
+  "license": "ISC",
+  "devDependencies": {
+    "@types/mongoose": "^5.3.12"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/komaldeep1124/lesson4b_week4.git"
+  },
+  "bugs": {
+    "url": "https://github.com/komaldeep1124/lesson4b_week4/issues"
+  },
+  "homepage": "https://github.com/komaldeep1124/lesson4b_week4#readme"
 }
