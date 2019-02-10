@@ -1,4 +1,4 @@
 module.exports={
-    "URI": "mongodb://localhost/test"
+    "URI": "mongodb://localhost/komal"
 
 }

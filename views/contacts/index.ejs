@@ -9,16 +9,16 @@
    <table class="table table-bordered table-striped table-hover">
       <!-- header row-->
     <tr>
-           <th class="text-center">First Name</th>
-           <th class="text-center">Last Name</th>
-           <th class="text-center">Age</th>
+           <th class="text-center">Name</th>
+           <th class="text-center">Description</th>
+           
        </tr>
 <!-- Repeatable template row-->
-<% for(let count=0;count < contactList.length;count++){%>
+<% for(let count=0;count < favList.length;count++){%>
 <tr>
-    <td class="text-center"><%=contactList[count].firstName %></td>
-    <td class="text-center"><%=contactList[count].lastName %></td>
-    <td class="text-center"><%=contactList[count].age %></td>
+    <td class="text-center"><%=favList[count].name %></td>
+    <td class="text-center"><%=favList[count].desc %></td>
+
 </tr>
 <%}%>
    </table>
@@ -28,4 +28,3 @@
 </div>
 
 <% include ../partials/footer.ejs %>
-    
