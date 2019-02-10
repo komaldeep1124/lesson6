@@ -1,30 +1,30 @@
 <% include ../partials/header.ejs %>
 
-    <!-- embed conten here -->
-<div class="container">
-    <div class="row">
-        <div class="col-md-offset-3 col-md-6"></div>
-   <h1><%=title%> </h1>
-   <br>
-   <table class="table table-bordered table-striped table-hover">
-      <!-- header row-->
-    <tr>
-           <th class="text-center">Name</th>
-           <th class="text-center">Description</th>
-           
-       </tr>
-<!-- Repeatable template row-->
-<% for(let count=0;count < favList.length;count++){%>
-<tr>
-    <td class="text-center"><%=favList[count].name %></td>
-    <td class="text-center"><%=favList[count].desc %></td>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-offset-3 col-md-6">
+                <h1><%= title %></h1>
+                <br>
+                <table class="table table-bordered table-striped table-hover">
+                    <!-- Header Row-->
+                    <tr>
+                        <th class="text-center">First Name</th>
+                        <th class="text-center">Last Name</th>
+                        <th class="text-center">Age</th>
+                    </tr>
 
-</tr>
-<%}%>
-   </table>
-   
-   
+                    <!-- Repeatable Template Row -->
+                    <% for(let count = 0; count < contactList.length; count++) { %>
+                        <tr>
+                            <td class="text-center"><%= contactList[count].firstName %></td>
+                            <td class="text-center"><%= contactList[count].lastName %></td>
+                            <td class="text-center"><%= contactList[count].age %></td>
+                        </tr>
+                    <% } %>
+                </table>
+
+            </div>
+        </div>
     </div>
-</div>
 
 <% include ../partials/footer.ejs %>
