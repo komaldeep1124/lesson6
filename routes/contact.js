@@ -50,7 +50,6 @@ else{
     //refresh contact list
     res.redirect('/contact-list');
 }
-
 });
 });
 
