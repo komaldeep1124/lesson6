@@ -31,4 +31,28 @@ res.render('contacts/add',{
 });
 
 });
+/* post route to process add page*/
+router.post('/add',(req,res,next)=>
+{
+ 
+        
+let newContact=contactModel({
+"firstName":req.body.firstName,
+"lastName":req.body.lastName,
+"age":req.body.age
+});
+contactModel.create(newContact,(err,contactModel) =>{
+if(err){
+console.log(err);
+res.end
+}
+else{
+    //refresh contact list
+    res.redirect('/contact-list');
+}
+
+});
+});
+
+
 module.exports = router;
