@@ -31,11 +31,9 @@ res.render('contacts/add',{
 });
 
 });
-/* post route to process add page*/
+/* post route to process ADD page*/
 router.post('/add',(req,res,next)=>
-{
- 
-        
+{      
 let newContact=contactModel({
 "firstName":req.body.firstName,
 "lastName":req.body.lastName,
@@ -44,13 +42,59 @@ let newContact=contactModel({
 contactModel.create(newContact,(err,contactModel) =>{
 if(err){
 console.log(err);
-res.end
+res.end(err)
 }
 else{
     //refresh contact list
     res.redirect('/contact-list');
 }
 });
+});
+/* get request-display EDIT page*/
+router.get('/edit/:id',(req,res,next)=>{
+let id=req.params.id;
+
+contactModel.findById(id,(err,contactObject)=>
+{
+    if(err){
+        console.log(err);
+        res.end(err)
+        }
+        else{
+            //show the edit view contact list
+            res.render('contacts/edit',
+            {          
+                title:'Edit Contact',
+                contact:contactObject
+            });
+    
+    
+        }
+});
+
+});
+router.post('/edit/:id',(req,res,next)=>
+{
+    let id=req.params.id;
+    let updatedContact=contactModel({
+        "_id":id,
+        "firstName":req.body.firstName,
+        "lastName":req.body.lasttName,
+        "age":req.body.age
+    });
+    contactModel.update({_id:id}),updatedContact,(err)=>{
+        if(err){
+            console.log(err);
+            res.end(err)
+            }
+            else{
+                //show the edit view contact list
+                res.redirect('/contact-list');
+                 
+            }
+
+        }
+
 });
 
 
