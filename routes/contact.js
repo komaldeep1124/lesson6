@@ -82,7 +82,7 @@ router.post('/edit/:id',(req,res,next)=>
         "lastName":req.body.lasttName,
         "age":req.body.age
     });
-    contactModel.update({_id:id}),updatedContact,(err)=>{
+    contactModel.update({_id:id},updatedContact,(err)=>{
         if(err){
             console.log(err);
             res.end(err)
@@ -90,12 +90,25 @@ router.post('/edit/:id',(req,res,next)=>
             else{
                 //show the edit view contact list
                 res.redirect('/contact-list');
-                 
-            }
+            }      
+       });
 
+        });
+
+/* get request to perform delte action*/
+router.get('/delete/:id',(req,res,next) =>{
+let id=req.params.id;
+contactModel.remove({_id:id},(err)=>{
+    if(err){
+        console.log(err);
+        res.end(err)
         }
+        else{
+            //show the edit view contact list
+            res.redirect('/contact-list');
+        }     
 
 });
-
+});
 
 module.exports = router;
