@@ -1,5 +1,5 @@
 <% include ../partials/header.ejs %>
-<!--Content for edit page-->
+
 <div class="container">
     <div class="row">
         <div class="col-md-offset-3 col-md-6">
@@ -11,7 +11,6 @@
                 id="FirstNameTextField"
              placeholder="Enter First name"
             name="firstName"
-            value="<%= contact.firstName%>"
             required>
         </div >
         <div class="form-group">
@@ -20,7 +19,6 @@
                 id="LastNameTextField"
              placeholder="Enter Last name"
             name="lastName"
-            value="<%= contact.lastName%>"
             required>
         </div >
         <div class="form-group">
@@ -29,7 +27,6 @@
                 id="AgeTextField"
              placeholder="Enter Age "
             name="age"
-            value="<%= contact.age%>"
             required>
         </div >
         <button type="submit" class="btn btn-primary">
